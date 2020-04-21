@@ -1,0 +1,81 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#q1{
+				border: 1px solid black;
+				width: 600px;
+				height: 600px;
+				position:absolute;
+				}
+			#current{
+				width: 600px;
+				height: 600px;
+				display: block;
+				
+			}
+			#q3{
+				width: 600px;
+				height: 600px;
+				display: none;
+			}
+			#q4{
+				width: 600px;
+				height: 600px;
+				display: none;
+			}
+			#zuoanniu{
+				width: 50px;
+				height: 50px;
+				background-color: pink;
+				position: relative;
+			}
+			#youanniu{
+				border: 1px solid black;
+				width: 50px;
+				height: 50px;
+				background-color: pink;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="q1">
+			<img src="img/01.jpg" id="current" />
+			<img src="img/02.jpg" id="q3" />
+			<img src="img/03.jpg" id="q4" />
+			<div id="zuoanniu"></div>
+			<div id="youanniu"></div>
+		</div>
+		<script type="text/javascript">
+			var diyizhang=document.getElementById("q1").getElementsByTagName("img");
+			var za=document.getElementById("zuoanniu");
+			var ya=document.getElementById("youanniu");
+			//信号量 0 1 2
+			var img=0;
+			youanniu.onclick=function(){
+				img++;
+				if (img>2) {
+					img=0;
+				}
+				a();
+			}
+			//根据当前信号量的值 来切换图片
+			function a(){
+				///去掉所有图片的类名
+				for (var i=0;i<diyizhang.length;i++) {
+					diyizhang[i].className="";
+				}
+				//把第一张加上类名
+				diyizhang[img].className="current";
+			}
+
+		</script>
+	</body>
+</html>
